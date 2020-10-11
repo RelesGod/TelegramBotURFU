@@ -24,13 +24,13 @@ public class Example extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "";
+        return "RPGtask_bot";
         //возвращаем юзера
     }
 
     @Override
     public String getBotToken() {
-        return "";
+        return "1175262977:AAH9nkBQNOASQQ-V7dP_TaOs7iiBIef0Qo8";
         //Токен бота
     }
 
@@ -38,9 +38,9 @@ public class Example extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
 
         // We check if the update has a message and the message has text
-        if (update.hasMessage() && update.getMessage().hasText()) {
+        if (update.hasMessage() && update.getMessage().getText().equals("/start")) {
             // Set variables
-            String message_text = update.getMessage().getText();
+            String message_text = "Hi, man, I'm RPG bot! Right now I can't do anything, but soon I'll work!";
             long chat_id = update.getMessage().getChatId();
 
             SendMessage message = new SendMessage() // Create a message object object
